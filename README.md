@@ -49,16 +49,5 @@ order by 1;
 ## Calibração do modelo
 Por se tratar de uma série temporal de três anos, o dataset foi constituído por 36 termos, sendo que o mesmo foi dividido em conjunto de treinamento e teste.
 Foi aplicada a proporção 80/20 para divisão da série, onde 28 meses foram utilizados para compor o dataset de treinamento e 8 meses para o de testes. Os dados de testes foram sempre os últimos 8 meses das séries.   
-## Seleção dos modelos 
-Foi empregado o modelo ARIMA para a realização das predições tendo em vista a sua versatilidade para a análise de dados de séries temporais.  
-## Estacionalidade
-Por meio do Teste de Dickey-Fuller Aumentado (ADF) foi verificado se as séries temporais são estacionárias ou não. Foi considerado que a série é estacionária caso o ADF retorne o p-value inferior ao nível de confiança de 0.05. Para as séries não estacionárias foi realizada a diferenciação da série temporal.
-## Seleção dos parâmetros
-Inicialmente, os parâmetros foram selecionados manualmente por meio da diferenciação, aplicação da autocorrelação (p, q) e autocorrelação parcial (d) sem avaliar critérios de sazonalidade.
-Para testar os melhores parâmetros (p, d, q) para o modelo foi utilizada a função `auto_arima` do Python imputando parâmetros de sazonalidade. Essa função testa as combinações de valores para os parâmetros do Arima de forma recursiva e retorna o valor do Critério de Informação de Akaike (AIC) para cada teste realizado. Em caso do melhor modelo conter parâmetros sazonais, será empregado o SARIMA (AutoRegressivos Integrados de Médias Móveis com Sazonalidade) para realiar as predições.
-## Avaliação do modelo
-Os resíduos obtidos com os treinos foram analisados, a fim de avaliar se os modelos poderiam ser utilizados no estudo. Eles  foram avaliados por meio dos gráficos de dispersão, histograma com densidade, correlação e QQ.
-## Avaliação da predição
-As predições foram avaliadas pelas seguintes métricas: Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE) e Root Mean Squared Error (RMSE).  
-# Resultados e discussão
-Os resultados e discussão estão descritos ao longo do script Python, a fim de tornar o texto mais relacionado com os dados obtidos.
+  
+As demais informações acerca da metodologia empregada, resultados e discussão estão descritos ao longo do script Python, a fim de tornar o texto mais relacionado com os dados obtidos.
